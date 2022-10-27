@@ -14,6 +14,7 @@ const images = [
 ];
 
 const galleryListEl = document.querySelector(".gallery");
+
 // for (const image of images) {
 //   let galleryItems = document.createElement("li");
 //   let galleryLinks = document.createElement("img");
@@ -25,16 +26,25 @@ const galleryListEl = document.querySelector(".gallery");
 //   galleryListEl.appendChild(galleryItems);
 // }
 
-const elements = images.map((image) => {
-  let galleryItems = document.createElement("li");
-  let galleryLinks = document.createElement("img");
-  galleryLinks.classList.add("link__img");
-  galleryLinks.src = image.url;
-  galleryLinks.alt = image.alt;
-  galleryLinks.width = 400;
-  galleryItems.appendChild(galleryLinks);
+// const elements = images.map((image) => {
+//   let galleryItems = document.createElement("li");
+//   let galleryLinks = document.createElement("img");
+//   galleryLinks.classList.add("link__img");
+//   galleryLinks.src = image.url;
+//   galleryLinks.alt = image.alt;
+//   galleryLinks.width = 400;
+//   galleryItems.appendChild(galleryLinks);
+//   galleryListEl.appendChild(galleryItems);
+// });
 
-  return elements;
+const elements = images.map((image) => {
+  galleryListEl.insertAdjacentHTML(
+    "beforeend",
+    `<li class="gallery__item list"><img class="gallery__img" src="${image.url}" alt="${image.alt}"></li>`
+  );
 });
 
-galleryListEl.appendChild(galleryItems);
+console.log(galleryListEl);
+
+const btnBack = document.querySelector("p");
+btnBack.classList.add("link__back");
