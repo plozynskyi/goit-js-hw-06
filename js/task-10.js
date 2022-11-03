@@ -22,9 +22,9 @@ const createBoxes = () => {
     widthNewBox = widthNewBox > 0 ? widthNewBox + 10 : 30;
     heightNewBox = heightNewBox > 0 ? heightNewBox + 10 : 30;
 
-    newDivBox.style.backgroundColor = getRandomHexColor();
     newDivBox.style.width = `${widthNewBox}px`;
     newDivBox.style.height = `${heightNewBox}px`;
+    newDivBox.style.backgroundColor = getRandomHexColor();
 
     boxesDiv.push(newDivBox);
   }
