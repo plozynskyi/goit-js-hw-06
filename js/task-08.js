@@ -10,7 +10,7 @@ function onFormSubmit(event) {
   } = event.currentTarget;
 
   if (email.value === '' || password.value === '') {
-    return alert('Введіть всі поля форми');
+    return alert('Введіть всі поля форми!!!');
   }
 
   const userDetails = { email: email.value, password: password.value };
