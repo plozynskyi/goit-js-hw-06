@@ -2,22 +2,11 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 
 const listEl = document.querySelector('#ingredients');
 
-const createItemList = elements => {
+const createGalleryList = ingredients.map(ingredient => {
   const createLi = document.createElement('li');
   createLi.classList.add('item');
+  createLi.textContent = ingredient;
+  return createLi;
+});
 
-  console.log(createLi);
-};
-const createGalleryList = ingredients.map(ingredient => createLi(ingredient));
-console.log(createGalleryList());
-
-// for (let i = 0; i < ingredients.length; i++) {
-//   let liItem = document.createElement('li');
-
-//   liItem.classList.add('item');
-//   liItem.textContent = ingredients[i];
-
-//   listEl.appendChild(liItem);
-
-//   console.log(liItem);
-// }
+listEl.append(...createGalleryList);
